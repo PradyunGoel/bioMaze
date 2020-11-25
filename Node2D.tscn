@@ -1,0 +1,176 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Spot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Spot.gd" type="Script" id=4]
+[ext_resource path="res://Node2D.gd" type="Script" id=5]
+
+[node name="Question1" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 48 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 80, 32 )
+
+[node name="StaticBody2D2" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 112, 32 )
+
+[node name="StaticBody2D3" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 144, 32 )
+
+[node name="StaticBody2D4" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 48, 48 )
+
+[node name="StaticBody2D10" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 48, 112 )
+
+[node name="StaticBody2D8" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 48, 80 )
+
+[node name="StaticBody2D7" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 48, 64 )
+
+[node name="StaticBody2D9" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 48, 96 )
+
+[node name="StaticBody2D5" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 176, 64 )
+
+[node name="StaticBody2D34" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 160, 64 )
+
+[node name="StaticBody2D35" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 160, 80 )
+
+[node name="StaticBody2D36" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 128, 80 )
+
+[node name="StaticBody2D47" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 128, 96 )
+
+[node name="StaticBody2D37" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 128, 48 )
+
+[node name="StaticBody2D38" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 112, 80 )
+
+[node name="StaticBody2D39" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 96, 64 )
+
+[node name="StaticBody2D41" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 80, 64 )
+
+[node name="StaticBody2D42" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 64, 96 )
+
+[node name="StaticBody2D43" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 96, 112 )
+
+[node name="StaticBody2D44" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 128, 112 )
+
+[node name="StaticBody2D45" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 160, 112 )
+
+[node name="StaticBody2D46" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 192, 96 )
+
+[node name="StaticBody2D40" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 96, 80 )
+
+[node name="StaticBody2D11" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 48, 128 )
+
+[node name="StaticBody2D12" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 64, 128 )
+
+[node name="StaticBody2D13" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 80, 128 )
+
+[node name="StaticBody2D14" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 96, 128 )
+
+[node name="StaticBody2D15" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 208, 32 )
+
+[node name="StaticBody2D23" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 208, 48 )
+
+[node name="StaticBody2D24" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 208, 64 )
+
+[node name="StaticBody2D25" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 208, 80 )
+
+[node name="StaticBody2D26" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 208, 96 )
+
+[node name="StaticBody2D27" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 208, 112 )
+
+[node name="StaticBody2D28" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 208, 128 )
+
+[node name="StaticBody2D29" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 192, 128 )
+
+[node name="StaticBody2D30" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 176, 128 )
+
+[node name="StaticBody2D31" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 144, 128 )
+
+[node name="StaticBody2D33" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 128, 128 )
+
+[node name="StaticBody2D32" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 160, 128 )
+
+[node name="StaticBody2D16" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 192, 32 )
+
+[node name="StaticBody2D17" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 176, 32 )
+
+[node name="StaticBody2D18" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 160, 32 )
+
+[node name="StaticBody2D19" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 128, 32 )
+
+[node name="StaticBody2D20" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 96, 32 )
+
+[node name="StaticBody2D21" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 64, 32 )
+
+[node name="StaticBody2D22" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 48, 32 )
+
+[node name="StaticBody2D6" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 192, 64 )
+
+[node name="Spot" parent="." instance=ExtResource( 3 )]
+position = Vector2( 112, 128 )
+script = ExtResource( 4 )
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+pause_mode = 2
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 147.0
+margin_bottom = 90.0
+window_title = ":)"
+dialog_text = "Level Cleared"
+[connection signal="body_entered" from="Spot" to="Spot" method="_on_Spot_body_entered"]
+[connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
