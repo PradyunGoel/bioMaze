@@ -7,15 +7,15 @@ extents = Vector2( 7.12028, 7.11448 )
 
 [node name="Spot" type="Area2D"]
 position = Vector2( 128, 48 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 2.12131, 1.41421 )
 scale = Vector2( 0.0392478, 0.0437026 )
 texture = ExtResource( 1 )
 centered = false
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 8, 8 )
