@@ -35,3 +35,8 @@ func move(dir):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Wrong0A_pressed():
+	#position += Vector2.LEFT*grid_size
+	pass # Replace with function body.

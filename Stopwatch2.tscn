@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Stopwatch2" type="Label"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,34 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Assets/minion.jpg" type="Texture" id=1]
+[ext_resource path="res://Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/wall.png" type="Texture" id=2]
-[ext_resource path="res://Assets/banana.png" type="Texture" id=3]
+[ext_resource path="res://Spot2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Question2.gd" type="Script" id=4]
+[ext_resource path="res://Player2.gd" type="Script" id=5]
+[ext_resource path="res://Spot2.gd" type="Script" id=6]
+[ext_resource path="res://Stopwatch2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Stopwatch2.gd" type="Script" id=8]
+[ext_resource path="res://Question3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Area2D.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Area2D.gd" type="Script" id=11]
+[ext_resource path="res://Q2B.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Q2B.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.23272, 6.93008 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6.5, 8 )
-
 [node name="Question2" type="Node2D"]
+position = Vector2( 0, -1 )
+script = ExtResource( 4 )
+next_scene = ExtResource( 9 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 256, 40 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 8, 8 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 8, 8 )
-shape = SubResource( 1 )
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -49,7 +44,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
 position = Vector2( 32, 40 )
@@ -63,7 +58,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
 position = Vector2( 32, 56 )
@@ -77,7 +72,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
 position = Vector2( 32, 72 )
@@ -91,7 +86,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Walls"]
 position = Vector2( 32, 88 )
@@ -105,7 +100,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Walls"]
 position = Vector2( 32, 104 )
@@ -119,7 +114,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Walls"]
 position = Vector2( 32, 120 )
@@ -133,7 +128,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Walls"]
 position = Vector2( 32, 136 )
@@ -147,7 +142,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D8"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Walls"]
 position = Vector2( 48, 136 )
@@ -161,7 +156,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D9"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Walls"]
 position = Vector2( 64, 136 )
@@ -175,7 +170,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D10"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Walls"]
 position = Vector2( 80, 136 )
@@ -189,7 +184,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D11"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Walls"]
 position = Vector2( 112, 136 )
@@ -203,7 +198,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D12"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Walls"]
 position = Vector2( 128, 136 )
@@ -217,7 +212,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D14"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Walls"]
 position = Vector2( 144, 136 )
@@ -231,7 +226,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D15"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="Walls"]
 position = Vector2( 160, 136 )
@@ -245,7 +240,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D16"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="Walls"]
 position = Vector2( 176, 136 )
@@ -259,7 +254,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D17"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="Walls"]
 position = Vector2( 192, 136 )
@@ -273,7 +268,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D18"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="Walls"]
 position = Vector2( 208, 136 )
@@ -287,7 +282,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D19"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="Walls"]
 position = Vector2( 224, 136 )
@@ -301,7 +296,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D20"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D21" type="StaticBody2D" parent="Walls"]
 position = Vector2( 240, 136 )
@@ -315,7 +310,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D21"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D22" type="StaticBody2D" parent="Walls"]
 position = Vector2( 256, 136 )
@@ -329,7 +324,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D22"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D23" type="StaticBody2D" parent="Walls"]
 position = Vector2( 272, 136 )
@@ -343,10 +338,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D23"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="Walls"]
-position = Vector2( 272, 120 )
+position = Vector2( 160, 56 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -357,7 +352,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D24"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D25" type="StaticBody2D" parent="Walls"]
 position = Vector2( 272, 104 )
@@ -371,7 +366,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D25"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D26" type="StaticBody2D" parent="Walls"]
 position = Vector2( 272, 88 )
@@ -385,7 +380,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D26"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D27" type="StaticBody2D" parent="Walls"]
 position = Vector2( 272, 72 )
@@ -399,7 +394,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D27"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D28" type="StaticBody2D" parent="Walls"]
 position = Vector2( 272, 56 )
@@ -413,7 +408,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D28"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D29" type="StaticBody2D" parent="Walls"]
 position = Vector2( 272, 40 )
@@ -427,7 +422,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D29"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D30" type="StaticBody2D" parent="Walls"]
 position = Vector2( 272, 24 )
@@ -441,7 +436,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D30"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D31" type="StaticBody2D" parent="Walls"]
 position = Vector2( 256, 24 )
@@ -455,7 +450,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D31"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D32" type="StaticBody2D" parent="Walls"]
 position = Vector2( 240, 24 )
@@ -469,7 +464,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D32"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D33" type="StaticBody2D" parent="Walls"]
 position = Vector2( 224, 24 )
@@ -483,7 +478,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D33"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D34" type="StaticBody2D" parent="Walls"]
 position = Vector2( 208, 24 )
@@ -497,7 +492,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D34"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D35" type="StaticBody2D" parent="Walls"]
 position = Vector2( 192, 24 )
@@ -511,7 +506,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D35"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D36" type="StaticBody2D" parent="Walls"]
 position = Vector2( 176, 24 )
@@ -525,7 +520,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D36"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D37" type="StaticBody2D" parent="Walls"]
 position = Vector2( 160, 24 )
@@ -539,7 +534,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D37"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D38" type="StaticBody2D" parent="Walls"]
 position = Vector2( 144, 24 )
@@ -553,7 +548,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D38"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D39" type="StaticBody2D" parent="Walls"]
 position = Vector2( 128, 24 )
@@ -567,7 +562,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D39"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D45" type="StaticBody2D" parent="Walls"]
 position = Vector2( 256, 56 )
@@ -581,7 +576,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D45"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D46" type="StaticBody2D" parent="Walls"]
 position = Vector2( 240, 56 )
@@ -595,7 +590,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D46"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D47" type="StaticBody2D" parent="Walls"]
 position = Vector2( 240, 72 )
@@ -609,10 +604,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D47"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D48" type="StaticBody2D" parent="Walls"]
-position = Vector2( 200, 40 )
+position = Vector2( 208, 40 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -623,10 +618,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D48"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D49" type="StaticBody2D" parent="Walls"]
-position = Vector2( 200, 56 )
+position = Vector2( 208, 56 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -637,10 +632,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D49"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D50" type="StaticBody2D" parent="Walls"]
-position = Vector2( 184, 56 )
+position = Vector2( 192, 56 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -651,10 +646,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D50"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D51" type="StaticBody2D" parent="Walls"]
-position = Vector2( 200, 88 )
+position = Vector2( 192, 88 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -665,10 +660,38 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D51"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D72" type="StaticBody2D" parent="Walls"]
+position = Vector2( 192, 120 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D72"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D72"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D73" type="StaticBody2D" parent="Walls"]
+position = Vector2( 208, 120 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/StaticBody2D73"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D73"]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D52" type="StaticBody2D" parent="Walls"]
-position = Vector2( 184, 88 )
+position = Vector2( 176, 88 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -679,10 +702,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D52"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D53" type="StaticBody2D" parent="Walls"]
-position = Vector2( 168, 88 )
+position = Vector2( 160, 88 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -693,10 +716,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D53"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D54" type="StaticBody2D" parent="Walls"]
-position = Vector2( 168, 104 )
+position = Vector2( 160, 104 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -707,10 +730,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D54"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D55" type="StaticBody2D" parent="Walls"]
-position = Vector2( 152, 104 )
+position = Vector2( 144, 104 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -721,10 +744,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D55"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D56" type="StaticBody2D" parent="Walls"]
-position = Vector2( 136, 104 )
+position = Vector2( 128, 104 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -735,10 +758,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D56"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D58" type="StaticBody2D" parent="Walls"]
-position = Vector2( 104, 120 )
+position = Vector2( 96, 120 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -749,10 +772,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D58"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D59" type="StaticBody2D" parent="Walls"]
-position = Vector2( 136, 72 )
+position = Vector2( 128, 72 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -763,10 +786,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D59"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D60" type="StaticBody2D" parent="Walls"]
-position = Vector2( 136, 56 )
+position = Vector2( 128, 56 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -777,10 +800,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D60"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D61" type="StaticBody2D" parent="Walls"]
-position = Vector2( 120, 72 )
+position = Vector2( 112, 72 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -791,10 +814,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D61"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D62" type="StaticBody2D" parent="Walls"]
-position = Vector2( 104, 72 )
+position = Vector2( 96, 72 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -805,10 +828,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D62"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D63" type="StaticBody2D" parent="Walls"]
-position = Vector2( 88, 72 )
+position = Vector2( 80, 72 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -819,10 +842,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D63"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D64" type="StaticBody2D" parent="Walls"]
-position = Vector2( 72, 72 )
+position = Vector2( 64, 72 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -833,7 +856,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D64"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D65" type="StaticBody2D" parent="Walls"]
 position = Vector2( 240, 104 )
@@ -847,10 +870,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D65"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D70" type="StaticBody2D" parent="Walls"]
-position = Vector2( 216, 88 )
+position = Vector2( 208, 88 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -861,10 +884,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D70"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D71" type="StaticBody2D" parent="Walls"]
-position = Vector2( 232, 88 )
+position = Vector2( 224, 88 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -875,10 +898,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D71"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D66" type="StaticBody2D" parent="Walls"]
-position = Vector2( 104, 104 )
+position = Vector2( 96, 104 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -889,10 +912,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D66"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D67" type="StaticBody2D" parent="Walls"]
-position = Vector2( 88, 104 )
+position = Vector2( 80, 104 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -903,7 +926,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D67"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D69" type="StaticBody2D" parent="Walls"]
 position = Vector2( 256, 104 )
@@ -917,10 +940,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D69"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D68" type="StaticBody2D" parent="Walls"]
-position = Vector2( 72, 104 )
+position = Vector2( 64, 104 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -931,10 +954,10 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D68"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D57" type="StaticBody2D" parent="Walls"]
-position = Vector2( 136, 88 )
+position = Vector2( 128, 88 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -945,7 +968,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D57"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D40" type="StaticBody2D" parent="Walls"]
 position = Vector2( 112, 24 )
@@ -959,7 +982,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D40"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D41" type="StaticBody2D" parent="Walls"]
 position = Vector2( 96, 24 )
@@ -973,7 +996,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D41"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D42" type="StaticBody2D" parent="Walls"]
 position = Vector2( 80, 24 )
@@ -987,7 +1010,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D42"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D43" type="StaticBody2D" parent="Walls"]
 position = Vector2( 64, 24 )
@@ -1001,7 +1024,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D43"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D44" type="StaticBody2D" parent="Walls"]
 position = Vector2( 48, 24 )
@@ -1015,7 +1038,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D44"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Walls"]
 position = Vector2( 96, 136 )
@@ -1029,23 +1052,182 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D13"]
 position = Vector2( 8, 8 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 256, 120 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Spot2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 272, 120 )
+script = ExtResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="Area2D"]
-position = Vector2( 8, 8 )
-scale = Vector2( 0.07, 0.07 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 8, 8 )
-shape = SubResource( 3 )
-
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
+[node name="AcceptDialog2" type="AcceptDialog" parent="."]
+pause_mode = 2
 margin_right = 83.0
 margin_bottom = 58.0
+window_title = "LevelCleared!!!"
+dialog_text = ":)"
+
+[node name="Stopwatch2" parent="." instance=ExtResource( 7 )]
+pause_mode = 2
+script = ExtResource( 8 )
+
+[node name="Label1" type="Label" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 1.0
+margin_right = 256.0
+margin_bottom = 15.0
+text = "Who is this?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct1" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 49.0
+margin_right = 224.0
+margin_bottom = 69.0
+text = "Minion"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong1A" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 81.0
+margin_right = 224.0
+margin_bottom = 101.0
+text = "Gru"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong1B" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 113.0
+margin_right = 224.0
+margin_bottom = 133.0
+text = "Nefario"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+margin_left = 48.0
+margin_top = 1.0
+margin_right = 271.0
+margin_bottom = 15.0
+text = "Which franchise do they appear in?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong2A" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 57.0
+margin_right = 224.0
+margin_bottom = 77.0
+text = "Madagascar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong2B" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 89.0
+margin_right = 224.0
+margin_bottom = 109.0
+text = "Happy Feet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct2" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 141.0
+text = "Despicable Me"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+margin_left = 56.0
+margin_top = 1.0
+margin_right = 264.0
+margin_bottom = 15.0
+text = "Which year are we in currently?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong3A" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 65.0
+margin_right = 224.0
+margin_bottom = 85.0
+text = "2018"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong3B" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 97.0
+margin_right = 224.0
+margin_bottom = 117.0
+text = "2019"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct3" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 129.0
+margin_right = 224.0
+margin_bottom = 149.0
+text = "2020"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q1" parent="." instance=ExtResource( 10 )]
+script = ExtResource( 11 )
+
+[node name="Q2B" parent="." instance=ExtResource( 12 )]
+script = ExtResource( 13 )
+[connection signal="body_entered" from="Spot2" to="Spot2" method="_on_Spot2_body_entered"]
+[connection signal="confirmed" from="AcceptDialog2" to="." method="_on_AcceptDialog2_confirmed"]
+[connection signal="pressed" from="Correct1" to="." method="_on_Correct1_pressed"]
+[connection signal="pressed" from="Wrong1A" to="." method="_on_Wrong1A_pressed"]
+[connection signal="pressed" from="Wrong1B" to="." method="_on_Wrong1B_pressed"]
+[connection signal="pressed" from="Wrong2A" to="." method="_on_Wrong2A_pressed"]
+[connection signal="pressed" from="Wrong2B" to="." method="_on_Wrong2B_pressed"]
+[connection signal="pressed" from="Correct2" to="." method="_on_Correct2_pressed"]
+[connection signal="pressed" from="Wrong3A" to="." method="_on_Wrong3A_pressed"]
+[connection signal="pressed" from="Wrong3B" to="." method="_on_Wrong3B_pressed"]
+[connection signal="pressed" from="Correct3" to="." method="_on_Correct3_pressed"]
+[connection signal="body_entered" from="Q1" to="Q1" method="_on_Q1_body_entered"]
+[connection signal="body_entered" from="Q2B" to="Q2B" method="_on_Q2B_body_entered"]
