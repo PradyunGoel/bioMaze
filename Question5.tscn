@@ -1855,12 +1855,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label1" type="Label" parent="."]
+[node name="ExLabel1" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 8.0
 margin_right = 256.0
 margin_bottom = 22.0
+text = "Who is the orange guy?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 256.0
+margin_bottom = 36.0
 text = "Who is the orange guy?"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1902,12 +1913,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
+[node name="ExLabel2" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 8.0
 margin_right = 256.0
 margin_bottom = 22.0
+text = "What does our hero like to eat?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 276.0
+margin_bottom = 36.0
 text = "What does our hero like to eat?"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1949,12 +1971,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="."]
+[node name="ExLabel3" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 8.0
 margin_right = 256.0
 margin_bottom = 22.0
+text = "Did you like the event?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 256.0
+margin_bottom = 36.0
 text = "Did you like the event?"
 __meta__ = {
 "_edit_use_anchors_": false

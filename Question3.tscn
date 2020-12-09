@@ -2055,7 +2055,7 @@ texture = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Q3"]
 shape = SubResource( 4 )
 
-[node name="Label1" type="Label" parent="."]
+[node name="ExLabel1" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 24.0
@@ -2063,6 +2063,17 @@ margin_right = 256.0
 margin_bottom = 38.0
 text = "How many noses do you have?"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 272.0
+margin_bottom = 36.0
+text = "How many noses do you have?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2103,7 +2114,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
+[node name="ExLabel2" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 24.0
@@ -2111,6 +2122,17 @@ margin_right = 256.0
 margin_bottom = 38.0
 text = "What's annoying and buzzes?"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 272.0
+margin_bottom = 36.0
+text = "What's annoying and buzzes?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2151,7 +2173,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="."]
+[node name="ExLabel3" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 24.0
@@ -2159,6 +2181,17 @@ margin_right = 256.0
 margin_bottom = 38.0
 text = "Name the event."
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 256.0
+margin_bottom = 36.0
+text = "Name the event."
 __meta__ = {
 "_edit_use_anchors_": false
 }

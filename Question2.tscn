@@ -1069,7 +1069,7 @@ dialog_text = ":)"
 pause_mode = 2
 script = ExtResource( 8 )
 
-[node name="Label1" type="Label" parent="."]
+[node name="ExLabel1" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 1.0
@@ -1077,6 +1077,17 @@ margin_right = 256.0
 margin_bottom = 15.0
 text = "Who is this?"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Button" parent="."]
+visible = false
+margin_left = 56.0
+margin_top = 17.0
+margin_right = 264.0
+margin_bottom = 37.0
+text = "Who is this?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1117,7 +1128,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
+[node name="ExLabel2" type="Label" parent="."]
 visible = false
 margin_left = 48.0
 margin_top = 1.0
@@ -1125,6 +1136,17 @@ margin_right = 271.0
 margin_bottom = 15.0
 text = "Which franchise do they appear in?"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Button" parent="."]
+visible = false
+margin_left = 48.0
+margin_top = 17.0
+margin_right = 283.0
+margin_bottom = 37.0
+text = "Which franchise do they appear in?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1165,7 +1187,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="."]
+[node name="ExLabel3" type="Label" parent="."]
 visible = false
 margin_left = 56.0
 margin_top = 1.0
@@ -1173,6 +1195,17 @@ margin_right = 264.0
 margin_bottom = 15.0
 text = "Which year are we in currently?"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 17.0
+margin_right = 256.0
+margin_bottom = 37.0
+text = "Which year are we in currently?"
 __meta__ = {
 "_edit_use_anchors_": false
 }

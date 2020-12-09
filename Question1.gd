@@ -14,10 +14,10 @@ var time_file = "user://time.save"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#var player = AudioStreamPlayer.new()
-	#self.add_child(player)
-	#player.stream = load("res://Assets/Star Wars- The Imperial March (Darth Vader's Theme).ogg")
-	#player.play()
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Assets/Star Wars- The Imperial March (Darth Vader's Theme).ogg")
+	player.play()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +25,7 @@ func _process(_delta):
 	if $Q1.occupied:
 		get_tree().set_pause(true)
 		$Label0.show()
+		#$Label0Button.show()
 		$Correct0.show()
 		$Wrong0A.show()
 		$Wrong0B.show()

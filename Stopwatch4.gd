@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta
-	self.text = str(time)+' sec'
+	self.text = str(stepify(time, 0.1))+' sec'
 
 func _get_time():
 	return time

@@ -18,10 +18,10 @@ func _ready():
 	time = file.get_var()
 	file.close()
 	$Stopwatch2.time = time
-	#var player = AudioStreamPlayer.new()
-	#self.add_child(player)
-	#player.stream = load("res://Assets/despicable_me.ogg")
-	#player.play()
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Assets/despicable_me.ogg")
+	player.play()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

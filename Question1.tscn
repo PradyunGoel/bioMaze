@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=2]
@@ -11,6 +11,13 @@
 [ext_resource path="res://Stopwatch.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Q2.gd" type="Script" id=10]
 [ext_resource path="res://Q2.tscn" type="PackedScene" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.105882, 0.109804, 0.105882, 1 )
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
 
 [node name="Question1" type="Node2D"]
 script = ExtResource( 4 )
@@ -181,15 +188,27 @@ margin_bottom = 90.0
 window_title = ":)"
 dialog_text = "Level Cleared"
 
-[node name="Label1" type="Label" parent="."]
+[node name="ExLabel1" type="Label" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 88.0
+margin_left = 80.0
 margin_top = 8.0
-margin_right = 229.0
+margin_right = 240.0
 margin_bottom = 22.0
+custom_styles/normal = SubResource( 1 )
 text = "Who is this character?"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 8.0
+margin_right = 256.0
+margin_bottom = 28.0
+text = "Who is this character?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -230,7 +249,7 @@ margin_bottom = 96.0
 [node name="Q1" parent="." instance=ExtResource( 7 )]
 script = ExtResource( 8 )
 
-[node name="Label0" type="Label" parent="."]
+[node name="ExLabel0" type="Label" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 8.0
@@ -242,6 +261,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label0" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 8.0
+margin_right = 256.0
+margin_bottom = 28.0
+text = "Who is this?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Wrong0A" type="Button" parent="."]
 pause_mode = 2
 visible = false
@@ -249,7 +279,7 @@ margin_left = 232.0
 margin_top = 64.0
 margin_right = 312.0
 margin_bottom = 84.0
-text = "Me"
+text = "Po da!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -283,7 +313,7 @@ __meta__ = {
 [node name="Q2" parent="." instance=ExtResource( 11 )]
 script = ExtResource( 10 )
 
-[node name="Label2" type="Label" parent="."]
+[node name="ExLabel2" type="Label" parent="."]
 visible = false
 margin_left = 56.0
 margin_top = 8.0
@@ -291,6 +321,17 @@ margin_right = 264.0
 margin_bottom = 22.0
 text = "What is the green thing?"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Button" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 8.0
+margin_right = 256.0
+margin_bottom = 28.0
+text = "What is the green thing?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
