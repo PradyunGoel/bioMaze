@@ -2,6 +2,8 @@ tool
 
 extends Node2D
 
+signal change_scene
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -20,7 +22,7 @@ func _ready():
 	$Stopwatch5.time = time
 	var player = AudioStreamPlayer.new()
 	self.add_child(player)
-	player.stream = load("res://Assets/seeYouAgain.ogg")
+	player.stream = load("res://Assets/Dora the Explorer.ogg")
 	player.play()
 	pass # Replace with function body.
 
@@ -46,6 +48,12 @@ func _process(_delta):
 		$Correct3.show()
 		#$AcceptDialog2.popup()
 		#$PopupMenu2.popup()
+	if $Q4.occupied:
+		get_tree().set_pause(true)
+		$Label4.show()
+		$Wrong4A.show()
+		$Wrong4B.show()
+		$Correct4.show()
 #	pass
 
 
@@ -68,6 +76,7 @@ func _on_Wrong3A_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
+	#emit_signal("change_scene")
 	get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
@@ -80,7 +89,8 @@ func _on_Wrong3B_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
-	get_tree().change_scene_to(next_scene)
+	emit_signal("change_scene")
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
@@ -171,3 +181,47 @@ func _on_Correct2_pressed():
 	$Wrong2B.hide()
 	pass # Replace with function body.
 
+
+
+func _on_Wrong4A_pressed():
+	get_tree().set_pause(false)
+	$Player5.position += Vector2.RIGHT*$Player5.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	$Stopwatch5.time += 100
+	pass # Replace with function body.
+
+
+func _on_Correct4_pressed():
+	get_tree().set_pause(false)
+	$Player5.position += Vector2.RIGHT*$Player5.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	pass # Replace with function body.
+
+
+func _on_Wrong4B_pressed():
+	get_tree().set_pause(false)
+	$Player5.position += Vector2.RIGHT*$Player5.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	$Stopwatch5.time += 100
+	pass # Replace with function body.

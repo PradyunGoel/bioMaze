@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/wall.png" type="Texture" id=2]
@@ -13,9 +13,18 @@
 [ext_resource path="res://Area2D.gd" type="Script" id=11]
 [ext_resource path="res://Q2B.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Q2B.gd" type="Script" id=13]
+[ext_resource path="res://buttonFont.tres" type="DynamicFont" id=14]
+[ext_resource path="res://labelFont.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Q4B.gd" type="Script" id=16]
+[ext_resource path="res://Assets/minion3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/minion_fluffy.png" type="Texture" id=18]
+[ext_resource path="res://Assets/minion_icecream.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.23272, 6.93008 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.68459, 6.6682 )
 
 [node name="Question2" type="Node2D"]
 position = Vector2( 0, -1 )
@@ -1069,25 +1078,25 @@ dialog_text = ":)"
 pause_mode = 2
 script = ExtResource( 8 )
 
-[node name="ExLabel1" type="Label" parent="."]
+[node name="Label1" type="Button" parent="."]
 visible = false
-margin_left = 64.0
-margin_top = 1.0
-margin_right = 256.0
-margin_bottom = 15.0
-text = "Who is this?"
-align = 1
+margin_left = 32.0
+margin_top = 9.0
+margin_right = 288.0
+margin_bottom = 65.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label1" type="Button" parent="."]
-visible = false
-margin_left = 56.0
-margin_top = 17.0
-margin_right = 264.0
-margin_bottom = 37.0
-text = "Who is this?"
+[node name="ExLabel1" type="Label" parent="Label1"]
+margin_top = 8.0
+margin_right = 256.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 15 )
+text = "A DNA strand with the sequence AACGTAACG is transcribed. What is the sequence of the mRNA molecule synthesized ?
+"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1096,10 +1105,11 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 49.0
+margin_top = 81.0
 margin_right = 224.0
-margin_bottom = 69.0
-text = "Minion"
+margin_bottom = 101.0
+custom_fonts/font = ExtResource( 14 )
+text = "UUGCAUUGC"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1108,10 +1118,11 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 81.0
+margin_top = 113.0
 margin_right = 224.0
-margin_bottom = 101.0
-text = "Gru"
+margin_bottom = 133.0
+custom_fonts/font = ExtResource( 14 )
+text = "AACGTAACG"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1120,22 +1131,11 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 113.0
+margin_top = 145.0
 margin_right = 224.0
-margin_bottom = 133.0
-text = "Nefario"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExLabel2" type="Label" parent="."]
-visible = false
-margin_left = 48.0
-margin_top = 1.0
-margin_right = 271.0
-margin_bottom = 15.0
-text = "Which franchise do they appear in?"
-align = 1
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 14 )
+text = "AACGUAACG"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1143,10 +1143,20 @@ __meta__ = {
 [node name="Label2" type="Button" parent="."]
 visible = false
 margin_left = 48.0
-margin_top = 17.0
+margin_top = 9.0
 margin_right = 283.0
 margin_bottom = 37.0
-text = "Which franchise do they appear in?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel2" type="Label" parent="Label2"]
+margin_top = 8.0
+margin_right = 223.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 15 )
+text = "Hepatitis B is transmitted through"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1158,7 +1168,8 @@ margin_left = 96.0
 margin_top = 57.0
 margin_right = 224.0
 margin_bottom = 77.0
-text = "Madagascar"
+custom_fonts/font = ExtResource( 14 )
+text = "Sneezing"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1170,7 +1181,8 @@ margin_left = 96.0
 margin_top = 89.0
 margin_right = 224.0
 margin_bottom = 109.0
-text = "Happy Feet"
+custom_fonts/font = ExtResource( 14 )
+text = "Female Anopheles"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1182,30 +1194,33 @@ margin_left = 96.0
 margin_top = 121.0
 margin_right = 224.0
 margin_bottom = 141.0
-text = "Despicable Me"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExLabel3" type="Label" parent="."]
-visible = false
-margin_left = 56.0
-margin_top = 1.0
-margin_right = 264.0
-margin_bottom = 15.0
-text = "Which year are we in currently?"
-align = 1
+custom_fonts/font = ExtResource( 14 )
+text = "Blood transfusion"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Button" parent="."]
 visible = false
-margin_left = 64.0
-margin_top = 17.0
-margin_right = 256.0
-margin_bottom = 37.0
-text = "Which year are we in currently?"
+margin_left = 24.0
+margin_top = 9.0
+margin_right = 296.0
+margin_bottom = 65.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel3" type="Label" parent="Label3"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 264.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 15 )
+text = "Assertion : Avery et al. found that DNA is the molecular basis of heredity.
+Reason : Transformation is caused by DNA.
+"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1213,11 +1228,12 @@ __meta__ = {
 [node name="Wrong3A" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 96.0
-margin_top = 65.0
-margin_right = 224.0
-margin_bottom = 85.0
-text = "2018"
+margin_left = 48.0
+margin_top = 81.0
+margin_right = 272.0
+margin_bottom = 101.0
+custom_fonts/font = ExtResource( 14 )
+text = "A is true, R is false"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1225,11 +1241,12 @@ __meta__ = {
 [node name="Wrong3B" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 96.0
-margin_top = 97.0
-margin_right = 224.0
-margin_bottom = 117.0
-text = "2019"
+margin_left = 48.0
+margin_top = 113.0
+margin_right = 272.0
+margin_bottom = 133.0
+custom_fonts/font = ExtResource( 14 )
+text = "A is false, R is true"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1237,11 +1254,12 @@ __meta__ = {
 [node name="Correct3" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 96.0
-margin_top = 129.0
-margin_right = 224.0
-margin_bottom = 149.0
-text = "2020"
+margin_left = 48.0
+margin_top = 145.0
+margin_right = 272.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 14 )
+text = "A is true, R is correct explanation of A"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1251,6 +1269,91 @@ script = ExtResource( 11 )
 
 [node name="Q2B" parent="." instance=ExtResource( 12 )]
 script = ExtResource( 13 )
+
+[node name="Q4" type="Area2D" parent="."]
+position = Vector2( 200, 81 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Q4"]
+scale = Vector2( 0.035, 0.035 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Q4"]
+shape = SubResource( 2 )
+
+[node name="Dummy1" type="Sprite" parent="."]
+position = Vector2( 56, 113 )
+scale = Vector2( 0.025, 0.025 )
+texture = ExtResource( 19 )
+
+[node name="Dummy2" type="Sprite" parent="."]
+position = Vector2( 184, 65 )
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 18 )
+
+[node name="Label4" type="Button" parent="."]
+visible = false
+margin_left = 32.0
+margin_top = 9.0
+margin_right = 288.0
+margin_bottom = 57.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel4" type="Label" parent="Label4"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 15 )
+text = "Which of the following is correctly matched to its location?"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4A" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 40.0
+margin_top = 81.0
+margin_right = 280.0
+margin_bottom = 101.0
+custom_fonts/font = ExtResource( 14 )
+text = "Parenchyma - midrib of leaf"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4B" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 40.0
+margin_top = 113.0
+margin_right = 280.0
+margin_bottom = 133.0
+custom_fonts/font = ExtResource( 14 )
+text = "Sclerenchyma - root hairs"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct4" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 40.0
+margin_top = 145.0
+margin_right = 280.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 14 )
+text = "Collenchyma - cortex of stem and leaves"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Spot2" to="Spot2" method="_on_Spot2_body_entered"]
 [connection signal="confirmed" from="AcceptDialog2" to="." method="_on_AcceptDialog2_confirmed"]
 [connection signal="pressed" from="Correct1" to="." method="_on_Correct1_pressed"]
@@ -1264,3 +1367,7 @@ script = ExtResource( 13 )
 [connection signal="pressed" from="Correct3" to="." method="_on_Correct3_pressed"]
 [connection signal="body_entered" from="Q1" to="Q1" method="_on_Q1_body_entered"]
 [connection signal="body_entered" from="Q2B" to="Q2B" method="_on_Q2B_body_entered"]
+[connection signal="body_entered" from="Q4" to="Q4" method="_on_Q4_body_entered"]
+[connection signal="pressed" from="Wrong4A" to="." method="_on_Wrong4A_pressed"]
+[connection signal="pressed" from="Wrong4B" to="." method="_on_Wrong4B_pressed"]
+[connection signal="pressed" from="Correct4" to="." method="_on_Correct4_pressed"]

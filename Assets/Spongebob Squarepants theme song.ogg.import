@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Spongebob Squarepants theme song.ogg-8542f21b6d6fb63879d739d47a5807be.oggstr"
+
+[deps]
+
+source_file="res://Assets/Spongebob Squarepants theme song.ogg"
+dest_files=[ "res://.import/Spongebob Squarepants theme song.ogg-8542f21b6d6fb63879d739d47a5807be.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

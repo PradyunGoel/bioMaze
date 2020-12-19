@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The-Pink-Panther-Theme-Song.ogg-387ae125b4a2fef11e647fa8f0805ae8.oggstr"
+
+[deps]
+
+source_file="res://Assets/The-Pink-Panther-Theme-Song.ogg"
+dest_files=[ "res://.import/The-Pink-Panther-Theme-Song.ogg-387ae125b4a2fef11e647fa8f0805ae8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

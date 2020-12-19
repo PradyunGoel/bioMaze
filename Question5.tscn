@@ -1,17 +1,21 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/wall.png" type="Texture" id=1]
 [ext_resource path="res://Player5.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player5.gd" type="Script" id=3]
 [ext_resource path="res://Q1E.gd" type="Script" id=4]
-[ext_resource path="res://Assets/chotabheem_jagoo_1.png" type="Texture" id=5]
-[ext_resource path="res://Assets/chotabheem_laddoo.png" type="Texture" id=6]
-[ext_resource path="res://Assets/chotabheem_chutki.png" type="Texture" id=7]
+[ext_resource path="res://Assets/diego.png" type="Texture" id=5]
+[ext_resource path="res://Assets/theEnd.png" type="Texture" id=6]
+[ext_resource path="res://Assets/map.png" type="Texture" id=7]
 [ext_resource path="res://Q2E.gd" type="Script" id=8]
 [ext_resource path="res://Q3E.gd" type="Script" id=9]
 [ext_resource path="res://Question5.gd" type="Script" id=10]
 [ext_resource path="res://Stopwatch5.gd" type="Script" id=11]
 [ext_resource path="res://Time.tscn" type="PackedScene" id=12]
+[ext_resource path="res://labelFont.tres" type="DynamicFont" id=13]
+[ext_resource path="res://buttonFont.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Q4E.gd" type="Script" id=15]
+[ext_resource path="res://Assets/backpack.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.25, 6.5 )
@@ -24,6 +28,8 @@ extents = Vector2( 6.52506, 6.87572 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 7.15178, 6.10878 )
+
+[sub_resource type="RectangleShape2D" id=5]
 
 [node name="Question5" type="Node2D"]
 script = ExtResource( 10 )
@@ -1812,8 +1818,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Q1"]
-scale = Vector2( 0.03, 0.03 )
-texture = ExtResource( 7 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Q1"]
 shape = SubResource( 2 )
@@ -1826,8 +1832,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Q2"]
-scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 5 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Q2"]
 shape = SubResource( 3 )
@@ -1840,11 +1846,26 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Q3"]
-scale = Vector2( 0.03, 0.03 )
+scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Q3"]
 shape = SubResource( 4 )
+
+[node name="Q4" type="Area2D" parent="."]
+position = Vector2( 168, 72 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Q4"]
+scale = Vector2( 0.01, 0.01 )
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Q4"]
+scale = Vector2( 0.65, 0.65 )
+shape = SubResource( 5 )
 
 [node name="Stopwatch5" type="Label" parent="."]
 pause_mode = 2
@@ -1855,24 +1876,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExLabel1" type="Label" parent="."]
+[node name="Label1" type="Button" parent="."]
 visible = false
-margin_left = 64.0
-margin_top = 8.0
-margin_right = 256.0
-margin_bottom = 22.0
-text = "Who is the orange guy?"
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 296.0
+margin_bottom = 80.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label1" type="Button" parent="."]
-visible = false
-margin_left = 64.0
-margin_top = 16.0
-margin_right = 256.0
-margin_bottom = 36.0
-text = "Who is the orange guy?"
+[node name="ExLabel1" type="Label" parent="Label1"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 264.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 13 )
+text = "In peas, a pure tall plant (TT) is crossed with a pure short plant (tt). The ratio of pure tall plants to pure short plants in F2 generation will be:"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1884,7 +1906,8 @@ margin_left = 96.0
 margin_top = 96.0
 margin_right = 224.0
 margin_bottom = 116.0
-text = "Chhota Bheem"
+custom_fonts/font = ExtResource( 14 )
+text = "1 : 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1896,7 +1919,8 @@ margin_left = 96.0
 margin_top = 128.0
 margin_right = 224.0
 margin_bottom = 148.0
-text = "Mighty Raju"
+custom_fonts/font = ExtResource( 14 )
+text = "3 : 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1908,29 +1932,30 @@ margin_left = 96.0
 margin_top = 160.0
 margin_right = 224.0
 margin_bottom = 180.0
-text = "Shishimaru"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExLabel2" type="Label" parent="."]
-visible = false
-margin_left = 64.0
-margin_top = 8.0
-margin_right = 256.0
-margin_bottom = 22.0
-text = "What does our hero like to eat?"
+custom_fonts/font = ExtResource( 14 )
+text = "1 : 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Button" parent="."]
 visible = false
-margin_left = 64.0
+margin_left = 24.0
 margin_top = 16.0
-margin_right = 276.0
-margin_bottom = 36.0
-text = "What does our hero like to eat?"
+margin_right = 296.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel2" type="Label" parent="Label2"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 264.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 13 )
+text = "A student observes an organism and finds that it has a closed circulatory system, nephridia, longitudinal and circular muscles and lateral appendages. Which of these organisms is it most likely to be?"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1939,10 +1964,11 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 96.0
+margin_top = 112.0
 margin_right = 224.0
-margin_bottom = 116.0
-text = "Laddoos"
+margin_bottom = 132.0
+custom_fonts/font = ExtResource( 14 )
+text = "Nereis"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1951,10 +1977,11 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 128.0
+margin_top = 144.0
 margin_right = 224.0
-margin_bottom = 148.0
-text = "Spinach"
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 14 )
+text = "Clitellata"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1963,32 +1990,33 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 160.0
+margin_top = 176.0
 margin_right = 224.0
-margin_bottom = 180.0
-text = "Magic potion"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExLabel3" type="Label" parent="."]
-visible = false
-margin_left = 64.0
-margin_top = 8.0
-margin_right = 256.0
-margin_bottom = 22.0
-text = "Did you like the event?"
+margin_bottom = 196.0
+custom_fonts/font = ExtResource( 14 )
+text = "Hirudinaria"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Button" parent="."]
 visible = false
-margin_left = 64.0
+margin_left = 32.0
 margin_top = 16.0
-margin_right = 256.0
-margin_bottom = 36.0
-text = "Did you like the event?"
+margin_right = 288.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel3" type="Label" parent="Label3"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 13 )
+text = "A pregnant woman has an equal chance of her baby being blood group A or blood group AB. Which one of the following shows the possible genotypes of the woman and the father of her child?"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1997,10 +2025,11 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 96.0
+margin_top = 120.0
 margin_right = 224.0
-margin_bottom = 116.0
-text = "Yes, a lot, you're the best"
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 14 )
+text = "IA IA and IB IO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2009,10 +2038,11 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 128.0
+margin_top = 152.0
 margin_right = 224.0
-margin_bottom = 148.0
-text = "No"
+margin_bottom = 172.0
+custom_fonts/font = ExtResource( 14 )
+text = " IA IB and IB IO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2021,16 +2051,98 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 160.0
+margin_top = 184.0
 margin_right = 224.0
-margin_bottom = 180.0
-text = "Yes"
+margin_bottom = 204.0
+custom_fonts/font = ExtResource( 14 )
+text = "IA IO and IB IO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label4" type="Button" parent="."]
+visible = false
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 280.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel4" type="Label" parent="Label4"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 240.0
+margin_bottom = 148.0
+custom_fonts/font = ExtResource( 13 )
+text = "How many of the given cartilage are matched correctly with their locations?
+
+(i) Yellow Fibrocartilage - epiglottis, tip of nose
+
+(ii) Calcified Cartilage - frog’s pectoral girdle
+
+(iii) Hyaline Cartilage - larynx, tracheal rings
+
+(iv) White Fibrocartilage - end of long bones, between vertebrae
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4A" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 176.0
+margin_right = 224.0
+margin_bottom = 196.0
+custom_fonts/font = ExtResource( 14 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct4" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 208.0
+margin_right = 224.0
+margin_bottom = 228.0
+custom_fonts/font = ExtResource( 14 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4B" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 240.0
+margin_right = 224.0
+margin_bottom = 260.0
+custom_fonts/font = ExtResource( 14 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dummy1" type="Sprite" parent="."]
+position = Vector2( 136, 168 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 7 )
+
+[node name="Dummy2" type="Sprite" parent="."]
+position = Vector2( 72, 248 )
+scale = Vector2( 0.01, 0.01 )
+texture = ExtResource( 16 )
 [connection signal="body_entered" from="Q1" to="Q1" method="_on_Q1_body_entered"]
 [connection signal="body_entered" from="Q2" to="Q2" method="_on_Q2_body_entered"]
 [connection signal="body_entered" from="Q3" to="Q3" method="_on_Q3_body_entered"]
+[connection signal="body_entered" from="Q4" to="Q4" method="_on_Q4_body_entered"]
 [connection signal="pressed" from="Correct1" to="." method="_on_Correct1_pressed"]
 [connection signal="pressed" from="Wrong1A" to="." method="_on_Wrong1A_pressed"]
 [connection signal="pressed" from="Wrong1B" to="." method="_on_Wrong1B_pressed"]
@@ -2040,3 +2152,6 @@ __meta__ = {
 [connection signal="pressed" from="Correct3" to="." method="_on_Correct3_pressed"]
 [connection signal="pressed" from="Wrong3A" to="." method="_on_Wrong3A_pressed"]
 [connection signal="pressed" from="Wrong3B" to="." method="_on_Wrong3B_pressed"]
+[connection signal="pressed" from="Wrong4A" to="." method="_on_Wrong4A_pressed"]
+[connection signal="pressed" from="Correct4" to="." method="_on_Correct4_pressed"]
+[connection signal="pressed" from="Wrong4B" to="." method="_on_Wrong4B_pressed"]

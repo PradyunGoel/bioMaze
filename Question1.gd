@@ -2,6 +2,7 @@ tool
 
 extends Node2D
 
+signal change_scene
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,6 +12,7 @@ export (String, FILE) var next_scene_path = ""
 export var next_scene: PackedScene
 var penalty: int
 var time_file = "user://time.save"
+var curr_q = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,8 +45,31 @@ func _process(_delta):
 		$Wrong1B.show()
 		#$PopupMenu1.popup()
 		#$AcceptDialog.popup()
+	if $Q4.occupied:
+		get_tree().set_pause(true)
+		$Label4.show()
+		$Correct4.show()
+		$Wrong4A.show()
+		$Wrong4B.show()
 #	pass
 
+func _hide_it():
+	$print.set_text("yay")
+	$Label.hide()
+	get_tree().set_pause(false)
+	if curr_q:
+		emit_signal("change_scene")
+
+# the problem is here
+func wrong():
+	$Label.show()
+	var timer = Timer.new()
+	self.add_child(timer)
+	timer.pause_mode = PAUSE_MODE_PROCESS
+	#get_tree().change_scene_to(next_scene)
+	timer.connect("timeout",self, "_hide_it")
+	timer.set_wait_time(2)
+	timer.start()
 
 func _on_AcceptDialog_confirmed():
 	#if next_scene_path == "":
@@ -60,14 +85,16 @@ func _on_AcceptDialog_confirmed():
 
 
 func _on_Wrong1A_pressed():
+	get_tree().set_pause(false)
+	curr_q = 1
+	#wrong()
 	var file = File.new()
 	var time = $Stopwatch._get_time()
 	time += 100
 	file.open(time_file, File.WRITE)
 	file.store_var(time)
 	file.close()
-	get_tree().set_pause(false)
-	get_tree().change_scene_to(next_scene)
+	emit_signal("change_scene")
 	#pass # Replace with function body.
 
 
@@ -78,24 +105,29 @@ func _on_Correct1_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
-	get_tree().change_scene_to(next_scene)
+	emit_signal("change_scene")
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
 func _on_Wrong1B_pressed():
+	get_tree().set_pause(false)
+	curr_q = 1
 	var file = File.new()
 	var time = $Stopwatch._get_time()
 	time += 100
 	file.open(time_file, File.WRITE)
 	file.store_var(time)
 	file.close()
-	get_tree().set_pause(false)
-	get_tree().change_scene_to(next_scene)
+	#wrong()
+	emit_signal("change_scene")
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
 func _on_Wrong0A_pressed():
 	get_tree().set_pause(false)
+	#wrong()
 	$Player.position += Vector2.LEFT*$Player.grid_size
 	$Q1.occupied = false
 	$Q1.disconnect("body_entered", $Q1, "_on_Q1_body_entered")
@@ -106,11 +138,13 @@ func _on_Wrong0A_pressed():
 	$Wrong0A.hide()
 	$Wrong0B.hide()
 	$Stopwatch.time += 100
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
 func _on_Wrong0B_pressed():
 	get_tree().set_pause(false)
+	#wrong()
 	$Player.position += Vector2.LEFT*$Player.grid_size
 	$Q1.occupied = false
 	$Q1.disconnect("body_entered", $Q1, "_on_Q1_body_entered")
@@ -121,6 +155,7 @@ func _on_Wrong0B_pressed():
 	$Wrong0A.hide()
 	$Wrong0B.hide()
 	$Stopwatch.time += 100
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
@@ -154,6 +189,7 @@ func _on_Correct2_pressed():
 
 func _on_Wrong2A_pressed():
 	get_tree().set_pause(false)
+	#wrong()
 	$Player.position += Vector2.RIGHT*$Player.grid_size
 	$Q2.occupied = false
 	$Q2.disconnect("body_entered", $Q2, "_on_Q2_body_entered")
@@ -169,6 +205,7 @@ func _on_Wrong2A_pressed():
 
 func _on_Wrong2B_pressed():
 	get_tree().set_pause(false)
+	#wrong()
 	$Player.position += Vector2.RIGHT*$Player.grid_size
 	$Q2.occupied = false
 	$Q2.disconnect("body_entered", $Q2, "_on_Q2_body_entered")
@@ -180,3 +217,50 @@ func _on_Wrong2B_pressed():
 	$Wrong2B.hide()
 	$Stopwatch.time += 100
 	#pass # Replace with function body.
+
+
+func _on_Correct4_pressed():
+	get_tree().set_pause(false)
+	#wrong()
+	$Player.position += Vector2.RIGHT*$Player.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	pass # Replace with function body.
+
+
+func _on_Wrong4A_pressed():
+	get_tree().set_pause(false)
+	#wrong()
+	$Player.position += Vector2.RIGHT*$Player.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	$Stopwatch.time += 100
+	pass # Replace with function body.
+
+
+func _on_Wrong4B_pressed():
+	get_tree().set_pause(false)
+	#wrong()
+	$Player.position += Vector2.RIGHT*$Player.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	$Stopwatch.time += 100
+	pass # Replace with function body.

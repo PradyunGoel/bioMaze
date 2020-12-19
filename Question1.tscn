@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=2]
@@ -11,13 +11,47 @@
 [ext_resource path="res://Stopwatch.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Q2.gd" type="Script" id=10]
 [ext_resource path="res://Q2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Padauk-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://buttonFont.tres" type="DynamicFont" id=13]
+[ext_resource path="res://labelFont.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Assets/saber.png" type="Texture" id=15]
+[ext_resource path="res://Q4A.gd" type="Script" id=16]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.105882, 0.109804, 0.105882, 1 )
-expand_margin_left = 1.0
-expand_margin_right = 1.0
-expand_margin_top = 2.0
-expand_margin_bottom = 2.0
+[sub_resource type="DynamicFont" id=1]
+size = 11
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 11
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 11
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 11
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 11
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 11
+use_filter = true
+extra_spacing_top = -5
+extra_spacing_bottom = -5
+extra_spacing_space = -3
+font_data = ExtResource( 12 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 6.57783, 6.64839 )
 
 [node name="Question1" type="Node2D"]
 script = ExtResource( 4 )
@@ -188,27 +222,26 @@ margin_bottom = 90.0
 window_title = ":)"
 dialog_text = "Level Cleared"
 
-[node name="ExLabel1" type="Label" parent="."]
-pause_mode = 2
-visible = false
-margin_left = 80.0
-margin_top = 8.0
-margin_right = 240.0
-margin_bottom = 22.0
-custom_styles/normal = SubResource( 1 )
-text = "Who is this character?"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label1" type="Button" parent="."]
 visible = false
 margin_left = 64.0
 margin_top = 8.0
 margin_right = 256.0
-margin_bottom = 28.0
-text = "Who is this character?"
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel1" type="Label" parent="Label1"]
+pause_mode = 2
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 176.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 14 )
+text = "Which one of the following is a deficiency disease?"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -216,29 +249,32 @@ __meta__ = {
 [node name="Wrong1A" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 224.0
 margin_top = 64.0
-margin_right = 320.0
-margin_bottom = 84.0
-text = "Luke"
+margin_right = 312.0
+margin_bottom = 87.0
+custom_fonts/font = ExtResource( 13 )
+text = "Diabetes"
 
 [node name="Correct1" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 224.0
 margin_top = 96.0
-margin_right = 320.0
-margin_bottom = 116.0
-text = "Yoda"
+margin_right = 312.0
+margin_bottom = 119.0
+custom_fonts/font = ExtResource( 13 )
+text = "Goitre"
 
 [node name="Wrong1B" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
-margin_top = 120.0
-margin_right = 319.0
-margin_bottom = 140.0
-text = "Darth Vader"
+margin_left = 224.0
+margin_top = 128.0
+margin_right = 311.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 13 )
+text = "Tetanus"
 
 [node name="PopupMenu1" type="PopupMenu" parent="."]
 pause_mode = 2
@@ -249,25 +285,24 @@ margin_bottom = 96.0
 [node name="Q1" parent="." instance=ExtResource( 7 )]
 script = ExtResource( 8 )
 
-[node name="ExLabel0" type="Label" parent="."]
+[node name="Label0" type="Button" parent="."]
 visible = false
-margin_left = 64.0
+margin_left = 48.0
 margin_top = 8.0
-margin_right = 256.0
-margin_bottom = 22.0
-text = "Who is this?"
-align = 1
+margin_right = 272.0
+margin_bottom = 56.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label0" type="Button" parent="."]
-visible = false
-margin_left = 64.0
+[node name="ExLabel0" type="Label" parent="Label0"]
 margin_top = 8.0
-margin_right = 256.0
-margin_bottom = 28.0
-text = "Who is this?"
+margin_right = 224.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 14 )
+text = "An organic substance bound to an enzyme and essential for its activity is called"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -275,11 +310,12 @@ __meta__ = {
 [node name="Wrong0A" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 224.0
 margin_top = 64.0
 margin_right = 312.0
 margin_bottom = 84.0
-text = "Po da!"
+custom_fonts/font = SubResource( 1 )
+text = "Apoenzyme"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -287,11 +323,12 @@ __meta__ = {
 [node name="Wrong0B" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 224.0
 margin_top = 96.0
 margin_right = 312.0
-margin_bottom = 116.0
-text = "You da!"
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 2 )
+text = "Isoenzyme"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -299,11 +336,12 @@ __meta__ = {
 [node name="Correct0" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 224.0
 margin_top = 128.0
 margin_right = 312.0
-margin_bottom = 148.0
-text = "Yoda"
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 3 )
+text = "Coenzyme"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -313,25 +351,25 @@ __meta__ = {
 [node name="Q2" parent="." instance=ExtResource( 11 )]
 script = ExtResource( 10 )
 
-[node name="ExLabel2" type="Label" parent="."]
+[node name="Label2" type="Button" parent="."]
 visible = false
-margin_left = 56.0
+margin_left = 24.0
 margin_top = 8.0
-margin_right = 264.0
-margin_bottom = 22.0
-text = "What is the green thing?"
-align = 1
+margin_right = 296.0
+margin_bottom = 48.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Button" parent="."]
-visible = false
-margin_left = 64.0
-margin_top = 8.0
-margin_right = 256.0
-margin_bottom = 28.0
-text = "What is the green thing?"
+[node name="ExLabel2" type="Label" parent="Label2"]
+margin_left = 8.0
+margin_right = 264.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 14 )
+text = "Which is the one characteristic of the parents that can be inherited by their children?"
+align = 1
+valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -339,11 +377,12 @@ __meta__ = {
 [node name="Correct2" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 216.0
 margin_top = 56.0
-margin_right = 312.0
-margin_bottom = 76.0
-text = "Lightsaber"
+margin_right = 314.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 4 )
+text = "Snub nose"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -351,11 +390,12 @@ __meta__ = {
 [node name="Wrong2A" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 216.0
 margin_top = 88.0
 margin_right = 312.0
-margin_bottom = 108.0
-text = "Lightsaver"
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 5 )
+text = "Cut nose"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -363,11 +403,115 @@ __meta__ = {
 [node name="Wrong2B" type="Button" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 232.0
+margin_left = 216.0
 margin_top = 120.0
 margin_right = 312.0
-margin_bottom = 140.0
-text = "Sword"
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 6 )
+text = "Deep scar on chin"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 48.0
+margin_top = 152.0
+margin_right = 220.0
+margin_bottom = 166.0
+text = "Oops! You got that wrong..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="print" type="Label" parent="."]
+visible = false
+margin_left = 256.0
+margin_top = 8.0
+margin_right = 296.0
+margin_bottom = 22.0
+text = "bad"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q4" type="Area2D" parent="."]
+position = Vector2( 72, 56 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Q4"]
+scale = Vector2( 0.039, 0.044 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Q4"]
+shape = SubResource( 7 )
+
+[node name="Dummy1" type="Sprite" parent="."]
+position = Vector2( 168, 104 )
+scale = Vector2( 0.039, 0.044 )
+texture = ExtResource( 15 )
+
+[node name="Label4" type="Button" parent="."]
+visible = false
+margin_left = 32.0
+margin_top = 8.0
+margin_right = 288.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel4" type="Label" parent="Label4"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 240.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 14 )
+text = "The scientific name of banyan is written as Ficus benghalensis L. Which of the following statements is correct regarding this?"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct4" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 32.0
+margin_top = 80.0
+margin_right = 288.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 13 )
+text = "Letter L. signifies the taxonomist Linnaeus."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4A" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 32.0
+margin_top = 112.0
+margin_right = 288.0
+margin_bottom = 132.0
+custom_fonts/font = ExtResource( 13 )
+text = "Letter L. signified Latin language."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4B" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 32.0
+margin_top = 144.0
+margin_right = 288.0
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 13 )
+text = "Benghalensis is a generic name."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -377,11 +521,15 @@ __meta__ = {
 [connection signal="pressed" from="Correct1" to="." method="_on_Correct1_pressed"]
 [connection signal="pressed" from="Wrong1B" to="." method="_on_Wrong1B_pressed"]
 [connection signal="body_entered" from="Q1" to="Q1" method="_on_Q1_body_entered"]
-[connection signal="pressed" from="Wrong0A" to="." method="_on_Wrong0A_pressed"]
 [connection signal="pressed" from="Wrong0A" to="Player" method="_on_Wrong0A_pressed"]
+[connection signal="pressed" from="Wrong0A" to="." method="_on_Wrong0A_pressed"]
 [connection signal="pressed" from="Wrong0B" to="." method="_on_Wrong0B_pressed"]
 [connection signal="pressed" from="Correct0" to="." method="_on_Correct0_pressed"]
 [connection signal="body_entered" from="Q2" to="Q2" method="_on_Q2_body_entered"]
 [connection signal="pressed" from="Correct2" to="." method="_on_Correct2_pressed"]
 [connection signal="pressed" from="Wrong2A" to="." method="_on_Wrong2A_pressed"]
 [connection signal="pressed" from="Wrong2B" to="." method="_on_Wrong2B_pressed"]
+[connection signal="body_entered" from="Q4" to="Q4" method="_on_Q4_body_entered"]
+[connection signal="pressed" from="Correct4" to="." method="_on_Correct4_pressed"]
+[connection signal="pressed" from="Wrong4A" to="." method="_on_Wrong4A_pressed"]
+[connection signal="pressed" from="Wrong4B" to="." method="_on_Wrong4B_pressed"]

@@ -2,6 +2,8 @@ tool
 
 extends Node2D
 
+signal change_scene
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -44,6 +46,12 @@ func _process(_delta):
 		$Wrong2A.show()
 		$Wrong2B.show()
 		$Correct2.show()
+	if $Q4.occupied:
+		get_tree().set_pause(true)
+		$Label4.show()
+		$Wrong4A.show()
+		$Wrong4B.show()
+		$Correct4.show()
 		#$AcceptDialog2.popup()
 		#$PopupMenu2.popup()
 #	pass
@@ -68,7 +76,8 @@ func _on_Correct2_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
-	get_tree().change_scene_to(next_scene)
+	emit_signal("change_scene")
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
@@ -80,7 +89,8 @@ func _on_Wrong2A_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
-	get_tree().change_scene_to(next_scene)
+	emit_signal("change_scene")
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
@@ -92,7 +102,8 @@ func _on_Wrong2B_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
-	get_tree().change_scene_to(next_scene)
+	emit_signal("change_scene")
+	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
 
 
@@ -181,4 +192,48 @@ func _on_Correct3_pressed():
 	$Correct3.hide()
 	$Wrong3A.hide()
 	$Wrong3B.hide()
+	pass # Replace with function body.
+
+
+func _on_Wrong4A_pressed():
+	get_tree().set_pause(false)
+	$Player2.position += Vector2.RIGHT*$Player2.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	$Stopwatch2.time += 100
+	pass # Replace with function body.
+
+
+func _on_Wrong4B_pressed():
+	get_tree().set_pause(false)
+	$Player2.position += Vector2.RIGHT*$Player2.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
+	$Stopwatch2.time += 100
+	pass # Replace with function body.
+
+
+func _on_Correct4_pressed():
+	get_tree().set_pause(false)
+	$Player2.position += Vector2.RIGHT*$Player2.grid_size
+	$Q4.occupied = false
+	$Q4.disconnect("body_entered", $Q4, "_on_Q4_body_entered")
+	$Q4.hide()
+	#remove_child($Q1)
+	$Label4.hide()
+	$Correct4.hide()
+	$Wrong4A.hide()
+	$Wrong4B.hide()
 	pass # Replace with function body.

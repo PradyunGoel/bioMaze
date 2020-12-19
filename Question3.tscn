@@ -1,17 +1,20 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/wall.png" type="Texture" id=1]
 [ext_resource path="res://Player3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player3.gd" type="Script" id=3]
-[ext_resource path="res://Assets/charlie_bat.png" type="Texture" id=4]
-[ext_resource path="res://Assets/charlie_ball.png" type="Texture" id=5]
-[ext_resource path="res://Assets/charlie_snowy.png" type="Texture" id=6]
+[ext_resource path="res://Assets/plankton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/star.png" type="Texture" id=5]
+[ext_resource path="res://Assets/theEnd.png" type="Texture" id=6]
 [ext_resource path="res://Q2C.gd" type="Script" id=7]
 [ext_resource path="res://Q1C.gd" type="Script" id=8]
 [ext_resource path="res://Q3C.gd" type="Script" id=9]
 [ext_resource path="res://Stopwatch3.gd" type="Script" id=10]
 [ext_resource path="res://Question3.gd" type="Script" id=11]
 [ext_resource path="res://Question4.tscn" type="PackedScene" id=12]
+[ext_resource path="res://labelFont.tres" type="DynamicFont" id=13]
+[ext_resource path="res://buttonFont.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Assets/sponge-squid.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.2581, 7.06458 )
@@ -24,6 +27,8 @@ extents = Vector2( 6.11356, 6.21393 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6.21731, 6.30124 )
+
+[sub_resource type="RectangleShape2D" id=5]
 
 [node name="Question3" type="Node2D"]
 script = ExtResource( 11 )
@@ -2021,7 +2026,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Q1"]
-scale = Vector2( 0.04, 0.04 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Q1"]
@@ -2049,31 +2054,46 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Q3"]
-scale = Vector2( 0.01, 0.01 )
+scale = Vector2( 0.015, 0.015 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Q3"]
 shape = SubResource( 4 )
 
-[node name="ExLabel1" type="Label" parent="."]
+[node name="Q4" type="Area2D" parent="."]
 visible = false
-margin_left = 64.0
-margin_top = 24.0
-margin_right = 256.0
-margin_bottom = 38.0
-text = "How many noses do you have?"
-align = 1
+position = Vector2( 72, 88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Q4"]
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Q4"]
+scale = Vector2( 0.65, 0.65 )
+shape = SubResource( 5 )
+
+[node name="Label1" type="Button" parent="."]
+visible = false
+margin_left = 32.0
+margin_top = 8.0
+margin_right = 288.0
+margin_bottom = 48.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label1" type="Button" parent="."]
-visible = false
-margin_left = 64.0
-margin_top = 16.0
-margin_right = 272.0
-margin_bottom = 36.0
-text = "How many noses do you have?"
+[node name="ExLabel1" type="Label" parent="Label1"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 240.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 13 )
+text = "Histamine, serotonin and heparin are secreted by"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2085,7 +2105,8 @@ margin_left = 96.0
 margin_top = 96.0
 margin_right = 224.0
 margin_bottom = 116.0
-text = "0"
+custom_fonts/font = ExtResource( 14 )
+text = "Monocytes"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2097,7 +2118,8 @@ margin_left = 96.0
 margin_top = 128.0
 margin_right = 224.0
 margin_bottom = 148.0
-text = "2"
+custom_fonts/font = ExtResource( 14 )
+text = "Neutrophils"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2109,30 +2131,32 @@ margin_left = 96.0
 margin_top = 160.0
 margin_right = 224.0
 margin_bottom = 180.0
-text = "1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExLabel2" type="Label" parent="."]
-visible = false
-margin_left = 64.0
-margin_top = 24.0
-margin_right = 256.0
-margin_bottom = 38.0
-text = "What's annoying and buzzes?"
-align = 1
+custom_fonts/font = ExtResource( 14 )
+text = "Basophils"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Button" parent="."]
 visible = false
-margin_left = 64.0
-margin_top = 16.0
-margin_right = 272.0
-margin_bottom = 36.0
-text = "What's annoying and buzzes?"
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 264.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel2" type="Label" parent="Label2"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 200.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 13 )
+text = "Cat : Felidae :: Mango : ______
+"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2144,7 +2168,8 @@ margin_left = 96.0
 margin_top = 96.0
 margin_right = 224.0
 margin_bottom = 116.0
-text = "cow"
+custom_fonts/font = ExtResource( 14 )
+text = "Sapindales"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2156,7 +2181,8 @@ margin_left = 96.0
 margin_top = 128.0
 margin_right = 224.0
 margin_bottom = 148.0
-text = "mosquito"
+custom_fonts/font = ExtResource( 14 )
+text = "Anacardiaceae"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2168,30 +2194,30 @@ margin_left = 96.0
 margin_top = 160.0
 margin_right = 224.0
 margin_bottom = 180.0
-text = "pig"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ExLabel3" type="Label" parent="."]
-visible = false
-margin_left = 64.0
-margin_top = 24.0
-margin_right = 256.0
-margin_bottom = 38.0
-text = "Name the event."
-align = 1
+custom_fonts/font = ExtResource( 14 )
+text = "Poaceae"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Button" parent="."]
 visible = false
-margin_left = 64.0
-margin_top = 16.0
-margin_right = 256.0
-margin_bottom = 36.0
-text = "Name the event."
+margin_left = 48.0
+margin_top = 8.0
+margin_right = 272.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel3" type="Label" parent="Label3"]
+margin_top = 8.0
+margin_right = 224.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 13 )
+text = "Blood calcium level is lowered by the deficiency of "
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2203,7 +2229,8 @@ margin_left = 96.0
 margin_top = 96.0
 margin_right = 224.0
 margin_bottom = 116.0
-text = "Connect"
+custom_fonts/font = ExtResource( 14 )
+text = "Thyroxin"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2215,7 +2242,8 @@ margin_left = 96.0
 margin_top = 128.0
 margin_right = 224.0
 margin_bottom = 148.0
-text = "Ingenium"
+custom_fonts/font = ExtResource( 14 )
+text = "Parathormone"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2227,7 +2255,69 @@ margin_left = 96.0
 margin_top = 160.0
 margin_right = 224.0
 margin_bottom = 180.0
-text = "Criza"
+custom_fonts/font = ExtResource( 14 )
+text = "Calcitonin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Button" parent="."]
+visible = false
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExLabel4" type="Label" parent="Label4"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 240.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 13 )
+text = "Histamine, serotonin and heparin are secreted by"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4A" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 96.0
+margin_right = 224.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 14 )
+text = "Monocytes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong4B" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 128.0
+margin_right = 224.0
+margin_bottom = 148.0
+custom_fonts/font = ExtResource( 14 )
+text = "Neutrophils"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct4" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 96.0
+margin_top = 160.0
+margin_right = 224.0
+margin_bottom = 180.0
+custom_fonts/font = ExtResource( 14 )
+text = "Basophils"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2242,6 +2332,21 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Dummy1" type="Sprite" parent="."]
+position = Vector2( 88, 152 )
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 4 )
+
+[node name="Dummy2" type="Sprite" parent="."]
+position = Vector2( 264, 104 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 5 )
+
+[node name="Dummy3" type="Sprite" parent="."]
+position = Vector2( 264, 248 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 15 )
 [connection signal="body_entered" from="Q1" to="Q1" method="_on_Q1_body_entered"]
 [connection signal="body_entered" from="Q2" to="Q2" method="_on_Q2_body_entered"]
 [connection signal="body_entered" from="Q3" to="Q3" method="_on_Q3_body_entered"]
@@ -2254,3 +2359,6 @@ __meta__ = {
 [connection signal="pressed" from="Wrong3A" to="." method="_on_Wrong3A_pressed"]
 [connection signal="pressed" from="Correct3" to="." method="_on_Correct3_pressed"]
 [connection signal="pressed" from="Wrong3B" to="." method="_on_Wrong3B_pressed"]
+[connection signal="pressed" from="Wrong4A" to="." method="_on_Wrong4A_pressed"]
+[connection signal="pressed" from="Wrong4B" to="." method="_on_Wrong4B_pressed"]
+[connection signal="pressed" from="Correct4" to="." method="_on_Correct4_pressed"]
