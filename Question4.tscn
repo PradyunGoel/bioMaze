@@ -2354,7 +2354,7 @@ margin_top = 136.0
 margin_right = 256.0
 margin_bottom = 156.0
 custom_fonts/font = ExtResource( 14 )
-text = "Micromonospora purpurea"
+text = "Candida Lipolytica"
 __meta__ = {
 "_edit_use_anchors_": false
 }

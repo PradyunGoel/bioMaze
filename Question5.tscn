@@ -2062,10 +2062,10 @@ __meta__ = {
 
 [node name="Label4" type="Button" parent="."]
 visible = false
-margin_left = 32.0
+margin_left = 24.0
 margin_top = 16.0
-margin_right = 280.0
-margin_bottom = 176.0
+margin_right = 296.0
+margin_bottom = 152.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2073,8 +2073,8 @@ __meta__ = {
 [node name="ExLabel4" type="Label" parent="Label4"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 240.0
-margin_bottom = 148.0
+margin_right = 264.0
+margin_bottom = 136.0
 custom_fonts/font = ExtResource( 13 )
 text = "How many of the given cartilage are matched correctly with their locations?
 
@@ -2082,10 +2082,7 @@ text = "How many of the given cartilage are matched correctly with their locatio
 
 (ii) Calcified Cartilage - frog’s pectoral girdle
 
-(iii) Hyaline Cartilage - larynx, tracheal rings
-
-(iv) White Fibrocartilage - end of long bones, between vertebrae
-"
+(iii) Hyaline Cartilage - larynx, tracheal rings"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2095,9 +2092,9 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 176.0
+margin_top = 184.0
 margin_right = 224.0
-margin_bottom = 196.0
+margin_bottom = 204.0
 custom_fonts/font = ExtResource( 14 )
 text = "1"
 __meta__ = {
@@ -2108,9 +2105,9 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 208.0
+margin_top = 216.0
 margin_right = 224.0
-margin_bottom = 228.0
+margin_bottom = 236.0
 custom_fonts/font = ExtResource( 14 )
 text = "2"
 __meta__ = {
@@ -2121,9 +2118,9 @@ __meta__ = {
 pause_mode = 2
 visible = false
 margin_left = 96.0
-margin_top = 240.0
+margin_top = 248.0
 margin_right = 224.0
-margin_bottom = 260.0
+margin_bottom = 268.0
 custom_fonts/font = ExtResource( 14 )
 text = "3"
 __meta__ = {

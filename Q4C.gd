@@ -18,4 +18,3 @@ func _ready():
 
 func _on_Q4_body_entered(body):
 	occupied = true
-

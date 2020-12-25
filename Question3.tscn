@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/wall.png" type="Texture" id=1]
 [ext_resource path="res://Player3.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://labelFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://buttonFont.tres" type="DynamicFont" id=14]
 [ext_resource path="res://Assets/sponge-squid.png" type="Texture" id=15]
+[ext_resource path="res://Q4C.gd" type="Script" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.2581, 7.06458 )
@@ -2061,8 +2062,8 @@ texture = ExtResource( 6 )
 shape = SubResource( 4 )
 
 [node name="Q4" type="Area2D" parent="."]
-visible = false
 position = Vector2( 72, 88 )
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2277,7 +2278,7 @@ margin_top = 8.0
 margin_right = 240.0
 margin_bottom = 32.0
 custom_fonts/font = ExtResource( 13 )
-text = "Histamine, serotonin and heparin are secreted by"
+text = "Unjumble the letters to form a meaningful word: URMENI"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2291,7 +2292,7 @@ margin_top = 96.0
 margin_right = 224.0
 margin_bottom = 116.0
 custom_fonts/font = ExtResource( 14 )
-text = "Monocytes"
+text = "Nirume "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2304,7 +2305,7 @@ margin_top = 128.0
 margin_right = 224.0
 margin_bottom = 148.0
 custom_fonts/font = ExtResource( 14 )
-text = "Neutrophils"
+text = "Urine"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2317,7 +2318,7 @@ margin_top = 160.0
 margin_right = 224.0
 margin_bottom = 180.0
 custom_fonts/font = ExtResource( 14 )
-text = "Basophils"
+text = "Murein"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2350,6 +2351,7 @@ texture = ExtResource( 15 )
 [connection signal="body_entered" from="Q1" to="Q1" method="_on_Q1_body_entered"]
 [connection signal="body_entered" from="Q2" to="Q2" method="_on_Q2_body_entered"]
 [connection signal="body_entered" from="Q3" to="Q3" method="_on_Q3_body_entered"]
+[connection signal="body_entered" from="Q4" to="Q4" method="_on_Q4_body_entered"]
 [connection signal="pressed" from="Wrong1A" to="." method="_on_Wrong1A_pressed"]
 [connection signal="pressed" from="Wrong1B" to="." method="_on_Wrong1B_pressed"]
 [connection signal="pressed" from="Correct1" to="." method="_on_Correct1_pressed"]

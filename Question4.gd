@@ -3,6 +3,7 @@ tool
 extends Node2D
 
 signal change_scene
+signal change_score
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,6 +12,7 @@ signal change_scene
 export (String, FILE) var next_scene_path = ""
 export var next_scene: PackedScene
 var time: int
+var score = 0
 var time_file = "user://time.save"
 
 # Called when the node enters the scene tree for the first time.
@@ -64,6 +66,8 @@ func _on_Correct3_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
+	score = 1
+	emit_signal("change_score")
 	emit_signal("change_scene")
 	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
@@ -77,6 +81,7 @@ func _on_Wrong3A_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
+	emit_signal("change_score")
 	emit_signal("change_scene")
 	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
@@ -90,6 +95,7 @@ func _on_Wrong3B_pressed():
 	file.store_var(time)
 	file.close()
 	get_tree().set_pause(false)
+	emit_signal("change_score")
 	emit_signal("change_scene")
 	#get_tree().change_scene_to(next_scene)
 	#pass # Replace with function body.
@@ -106,6 +112,8 @@ func _on_Correct1_pressed():
 	$Correct1.hide()
 	$Wrong1A.hide()
 	$Wrong1B.hide()
+	score = 1
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -121,6 +129,7 @@ func _on_Wrong1A_pressed():
 	$Wrong1A.hide()
 	$Wrong1B.hide()
 	$Stopwatch4.time += 100
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -136,6 +145,7 @@ func _on_Wrong1B_pressed():
 	$Wrong1A.hide()
 	$Wrong1B.hide()
 	$Stopwatch4.time += 100
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -151,6 +161,7 @@ func _on_Wrong2A_pressed():
 	$Wrong2A.hide()
 	$Wrong2B.hide()
 	$Stopwatch4.time += 100
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -166,6 +177,7 @@ func _on_Wrong2B_pressed():
 	$Wrong2A.hide()
 	$Wrong2B.hide()
 	$Stopwatch4.time += 100
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -180,6 +192,8 @@ func _on_Correct2_pressed():
 	$Correct2.hide()
 	$Wrong2A.hide()
 	$Wrong2B.hide()
+	score = 1
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -195,6 +209,7 @@ func _on_Wrong4A_pressed():
 	$Wrong4A.hide()
 	$Wrong4B.hide()
 	$Stopwatch4.time += 100
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -210,6 +225,7 @@ func _on_Wrong4B_pressed():
 	$Wrong4A.hide()
 	$Wrong4B.hide()
 	$Stopwatch4.time += 100
+	emit_signal("change_score")
 	pass # Replace with function body.
 
 
@@ -224,4 +240,6 @@ func _on_Correct4_pressed():
 	$Correct4.hide()
 	$Wrong4A.hide()
 	$Wrong4B.hide()
+	score = 1
+	emit_signal("change_score")
 	pass # Replace with function body.
